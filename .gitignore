@@ -1,0 +1,6 @@
+plans/*.json
+results/*.json
+results/*.log
+!plans/.gitkeep
+!results/.gitkeep
+
