@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.8.1-runtime-ubuntu22.04
+FROM nvidia/cuda:12.8.1-base-ubuntu22.04
 
 ARG WILDRIG_VERSION=0.48.9
 ARG WILDRIG_URL=https://github.com/andru-kun/wildrig-multi/releases/download/${WILDRIG_VERSION}/wildrig-multi-linux-${WILDRIG_VERSION}.tar.gz
@@ -17,4 +17,3 @@ COPY entrypoint.sh /usr/local/bin/prl-burnin-entrypoint
 RUN chmod +x /usr/local/bin/prl-burnin-entrypoint
 
 ENTRYPOINT ["/usr/local/bin/prl-burnin-entrypoint"]
-

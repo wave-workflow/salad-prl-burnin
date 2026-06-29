@@ -23,20 +23,20 @@ Fontes usadas:
 Build local:
 
 ```bash
-docker build -t salad-prl-burnin:0.1.0 .
+docker build -t salad-prl-burnin:0.1.1 .
 ```
 
 Para Salad, a imagem precisa estar em um registry acessivel pela Salad:
 
 ```bash
-docker tag salad-prl-burnin:0.1.0 REGISTRY/salad-prl-burnin:0.1.0
-docker push REGISTRY/salad-prl-burnin:0.1.0
+docker tag salad-prl-burnin:0.1.1 REGISTRY/salad-prl-burnin:0.1.1
+docker push REGISTRY/salad-prl-burnin:0.1.1
 ```
 
 Depois salve o nome:
 
 ```bash
-export SALAD_BURNIN_IMAGE=REGISTRY/salad-prl-burnin:0.1.0
+export SALAD_BURNIN_IMAGE=REGISTRY/salad-prl-burnin:0.1.1
 ```
 
 ## Burn-in

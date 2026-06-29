@@ -182,6 +182,14 @@ function slug(value) {
     .slice(0, 50);
 }
 
+function displayName(value) {
+  return String(value || "")
+    .replace(/[^ ,-.0-9A-Za-z]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 63);
+}
+
 function buildPayload({ gpuClass, priority, minutes, image, workerSuffix }) {
   const seconds = Math.max(60, Math.round(Number(minutes) * 60));
   const safeGpu = slug(gpuClass.name.replace(/\(.+\)/g, ""));
@@ -192,7 +200,7 @@ function buildPayload({ gpuClass, priority, minutes, image, workerSuffix }) {
   return {
     autostart_policy: false,
     name,
-    display_name: `PRL burn-in ${gpuClass.name}`,
+    display_name: displayName(`PRL burn-in ${gpuClass.name}`),
     replicas: 1,
     restart_policy: "never",
     container: {
